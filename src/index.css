@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@layer base {
+  html, body {
+    overscroll-behavior: none;
+    overscroll-behavior-y: none;
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+    min-height: 100dvh;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #0d0e12;
+    color: #f3f4f6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    user-select: none;
+  }
+}
+
+/* Hide scrollbars globally for native mobile app feel */
+*, *::before, *::after {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0px !important;
+  height: 0px !important;
+  background: transparent !important;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0px !important;
+  height: 0px !important;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+:root {
+  --top-vignette-height: calc(9vh + env(safe-area-inset-top, 0px));
+  --bottom-vignette-height: calc(9vh + env(safe-area-inset-bottom, 0px));
+}
+
+/* Smooth fade gradient overlays for top and bottom */
+.top-feed-vignette {
+  height: var(--top-vignette-height);
+  background: linear-gradient(
+    180deg, 
+    rgba(13, 14, 18, 0.98) 0%, 
+    rgba(13, 14, 18, 0.85) 30%, 
+    rgba(13, 14, 18, 0.45) 65%, 
+    rgba(13, 14, 18, 0) 100%
+  );
+  pointer-events: none;
+}
+
+.bottom-feed-vignette {
+  height: var(--bottom-vignette-height);
+  background: linear-gradient(
+    0deg, 
+    rgba(13, 14, 18, 0.96) 0%, 
+    rgba(13, 14, 18, 0.80) 30%, 
+    rgba(13, 14, 18, 0.40) 65%, 
+    rgba(13, 14, 18, 0) 100%
+  );
+  pointer-events: none;
+}
+
+/* Living Emerald Smoke / Fluid Aura Animations */
+@keyframes aura-orbit-1 {
+  0% {
+    transform: translate(-12%, -10%) rotate(0deg) scale(0.95);
+  }
+  33% {
+    transform: translate(14%, -6%) rotate(120deg) scale(1.15);
+  }
+  66% {
+    transform: translate(-6%, 12%) rotate(240deg) scale(0.92);
+  }
+  100% {
+    transform: translate(-12%, -10%) rotate(360deg) scale(0.95);
+  }
+}
+
+@keyframes aura-orbit-2 {
+  0% {
+    transform: translate(12%, 8%) rotate(360deg) scale(0.9);
+  }
+  50% {
+    transform: translate(-14%, -12%) rotate(180deg) scale(1.18);
+  }
+  100% {
+    transform: translate(12%, 8%) rotate(0deg) scale(0.9);
+  }
+}
+
+@keyframes aura-breathe {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(0.94);
+  }
+  50% {
+    opacity: 0.88;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes aura-breathe-center {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.65;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.15);
+    opacity: 1;
+  }
+}
+
+.animate-aura-breathe {
+  animation: aura-breathe-center 5s ease-in-out infinite;
+}
+

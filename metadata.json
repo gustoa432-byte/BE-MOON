@@ -1,0 +1,6 @@
+{
+  "name": "BE’MOON",
+  "description": "Визуальная локальная среда — смотри, что умеют люди вокруг тебя. Pinterest-style визуальная лента работ и результатов без лишнего шума.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

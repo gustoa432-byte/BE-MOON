@@ -1,0 +1,20 @@
+{
+  "id": "/",
+  "name": "BE’MOON — Ремесла и мастера",
+  "short_name": "BE’MOON",
+  "description": "Смотри, что умеют люди вокруг тебя. Визуальная лента мастеров и ремесленников.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#0d0e12",
+  "background_color": "#0d0e12",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
